@@ -1,1 +1,4 @@
-vim configs for any machine
+# Dotfiles
+
+The purpose of this repository is to save all my standard configs in order
+to be able to bootstrap a new machine quickly

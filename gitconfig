@@ -1,0 +1,15 @@
+[color]
+  status = true
+[user]
+  email = matt@wrighters.net
+  name = Matt Wright
+[core]
+  editor = vim
+[merge]
+  tool = vimdiff
+
+[alias]
+  lg = log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%an%d%Creset %s %Cgreen(%cr)%Creset' --date=relative
+  up = "!git remote update -p; git merge --ff-only @{u}"
+  hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+
