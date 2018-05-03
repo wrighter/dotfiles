@@ -17,6 +17,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'ervandew/screen'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'jeetsukumaran/vim-buffergator'
+Plugin 'vim-scripts/upAndDown'
 
 " snippets
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -64,14 +65,17 @@ set nonumber
 let g:snips_author = "Matthew Wright"
 let g:snips_email = "matt@wrighters.net"
 let g:snips_github = "https://github.com/wrighter"
+
+" syntastic settings
+let g:syntastic_python_checkers = ['flake8', 'pydocstyle']
 " ui stuff
 colorscheme railscasts
 
 "set guifont=Andale\ Mono\ 8
 "set guifont=Andale\ Mono\ 9
 "set guifont=M+\ 1mn\ Medium\ 8
-"set guifont="Inconsolata Medium 10"
-set guifont=Monaco:h10
+set guifont="Inconsolata Medium 10"
+"set guifont=Monaco:h10
 "set guifont="Anonymous Pro 12"
 " tags stuff
 
@@ -90,6 +94,7 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.inc set filetype=php
   autocmd BufNewFile,BufRead *.R set expandtab softtabstop=2 filetype=r
   autocmd BufNewFile,BufRead *.csv set filetype=txt
+  autocmd BufNewFile,BufRead *.tl set filetype=lisp
 
   " Source the vimrc file after saving it
   autocmd bufwritepost .vimrc source $MYVIMRC
