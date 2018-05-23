@@ -125,4 +125,5 @@ autocmd FileType css noremap <buffer> <C-o> :call CSSBeautify()<cr>
 
 set noignorecase
 set number
+set ruler
 set relativenumber
