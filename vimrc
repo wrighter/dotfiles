@@ -18,6 +18,7 @@ Plugin 'ervandew/screen'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'vim-scripts/upAndDown'
+Plugin 'pangloss/vim-javascript'
 
 " snippets
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -26,6 +27,7 @@ Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 
 Plugin 'ervandew/supertab'
+Plugin 'mileszs/ack.vim'
 
 " colors
 Plugin 'jpo/vim-railscasts-theme'
@@ -77,14 +79,13 @@ colorscheme railscasts
 set guifont="Inconsolata Medium 10"
 "set guifont=Monaco:h10
 "set guifont="Anonymous Pro 12"
-" tags stuff
 
 set omnifunc=syntaxcomplete#Complete
 
 if has("autocmd")
   autocmd BufNewFile,BufRead *.py set ai
   autocmd BufNewFile,BufRead *.py syntax on
-  autocmd BufNewFile,BufRead *.py set expandtab softtabstop=4
+  autocmd BufNewFile,BufRead *.py set expandtab softtabstop=4 filetype=python
   autocmd BufRead *.py set smartindent cinwords=if,elif,for,while,try,except,finally,def,class
   autocmd BufNewFile,BufRead *.c,*.h,*.C,*.H,*.cpp,*.hpp,*.cxx,*.hxx set cindent cinoptions=g1s
   autocmd BufNewFile,BufRead *.c,*.h,*.C,*.H,*.cpp,*.hpp,*.cxx,*.hxx set expandtab
@@ -93,6 +94,8 @@ if has("autocmd")
   "autocmd BufNewFile,BufRead *.py set nospell
   autocmd BufNewFile,BufRead *.inc set filetype=php
   autocmd BufNewFile,BufRead *.R set expandtab softtabstop=2 filetype=r
+  autocmd BufNewFile,BufRead *.js set expandtab tabstop=2 softtabstop=2 shiftwidth=2
+  autocmd BufNewFile,BufRead *.html set expandtab tabstop=2 softtabstop=2 shiftwidth=2
   autocmd BufNewFile,BufRead *.csv set filetype=txt
   autocmd BufNewFile,BufRead *.tl set filetype=lisp
 
