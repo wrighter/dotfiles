@@ -22,3 +22,7 @@ set -o vi
 ln -sfT ~/projects/dotfiles/gitconfig ~/.gitconfig
 ln -sfT ~/projects/dotfiles/vimrc ~/.vimrc
 ln -sfT ~/projects/dotfiles/tmux.conf  ~/.tmux.conf
+
+[[ -e ~/vim/bundle/Vundle.vim ]] ||  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+
