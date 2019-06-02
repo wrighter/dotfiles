@@ -109,7 +109,7 @@ map <C-F4> gg=G
 map <C-F5> gggqG
 
 " tags stuff
-nmap ,t :!(cd %:p:h;ctags -R *)
+nmap ,c :!(cd %:p:h;ctags -R *)
 
 nmap ,m :'<,'>ScreenSend<CR>
 
