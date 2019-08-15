@@ -93,6 +93,7 @@ if has("autocmd")
   "autocmd BufNewFile,BufRead *.py set nospell
   autocmd BufNewFile,BufRead *.inc set filetype=php
   autocmd BufNewFile,BufRead *.R set expandtab softtabstop=2 filetype=r
+  autocmd BufNewFile,BufRead *.sh set expandtab softtabstop=2
   autocmd BufNewFile,BufRead *.csv set filetype=txt
   autocmd BufNewFile,BufRead *.tl set filetype=lisp
 

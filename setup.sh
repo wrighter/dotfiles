@@ -19,10 +19,11 @@ set -o vi
 
 " >> ~/.bashrc)
 
-ln -sfT ~/projects/dotfiles/gitconfig ~/.gitconfig
-ln -sfT ~/projects/dotfiles/vimrc ~/.vimrc
-ln -sfT ~/projects/dotfiles/tmux.conf  ~/.tmux.conf
+for c in gitconfig vimrc tmux.conf editrc inputrc
+do
+  ln -sfT ~/projects/dotfiles/${c} ~/.${c}
+done
 
-[[ -e ~/vim/bundle/Vundle.vim ]] ||  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+[[ -e ~/.vim/bundle/Vundle.vim ]] ||  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 
