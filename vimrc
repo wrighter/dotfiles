@@ -96,6 +96,7 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.R set expandtab softtabstop=2 filetype=r
   autocmd BufNewFile,BufRead *.js set expandtab tabstop=2 softtabstop=2 shiftwidth=2
   autocmd BufNewFile,BufRead *.html set expandtab tabstop=2 softtabstop=2 shiftwidth=2
+  autocmd BufNewFile,BufRead *.sh set expandtab softtabstop=2
   autocmd BufNewFile,BufRead *.csv set filetype=txt
   autocmd BufNewFile,BufRead *.tl set filetype=lisp
 
@@ -112,7 +113,7 @@ map <C-F4> gg=G
 map <C-F5> gggqG
 
 " tags stuff
-nmap ,t :!(cd %:p:h;ctags -R *)
+nmap ,c :!(cd %:p:h;ctags -R *)
 
 nmap ,m :'<,'>ScreenSend<CR>
 
