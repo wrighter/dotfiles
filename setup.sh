@@ -19,9 +19,9 @@ set -o vi
 
 " >> ~/.bashrc)
 
-for c in gitconfig vimrc tmux.conf editrc inputrc
+for c in gitconfig vimrc tmux.conf editrc inputrc flake8
 do
-  ln -sfT ~/projects/dotfiles/${c} ~/.${c}
+  ln -sf ~/projects/dotfiles/${c} ~/.${c}
 done
 
 [[ -e ~/.vim/bundle/Vundle.vim ]] ||  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
