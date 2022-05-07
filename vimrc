@@ -23,11 +23,14 @@ Plugin 'pangloss/vim-javascript'
 " snippets
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 
 Plugin 'ervandew/supertab'
 Plugin 'mileszs/ack.vim'
+
+" markdown
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 
 " colors
 Plugin 'jpo/vim-railscasts-theme'
