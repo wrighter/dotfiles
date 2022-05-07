@@ -2,7 +2,8 @@
   status = true
 [user]
   email = matt@wrighters.net
-  name = Matt Wright
+  name = wrighter
+
 [core]
   editor = vim
   whitespace = -trailing-space,-indent-with-non-tab,-tab-in-indent
@@ -14,7 +15,14 @@
   up = "!git remote update -p; git merge --ff-only @{u}"
   hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
   diffw = diff -w -U0 --word-diff-regex=[^[:space:]] 
+  slog = log --graph --all --topo-order --pretty='format:%h %ai %s%d (%an)'
 
 [credential]
 	helper = !aws codecommit credential-helper $@
 	UseHttpPath = true
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
