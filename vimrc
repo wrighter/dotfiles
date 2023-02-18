@@ -1,65 +1,58 @@
 set nocompatible              " be iMproved, required
-filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+call plug#begin()
 
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
-Plugin 'tpope/vim-fugitive'
-Plugin 'ervandew/screen'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'jeetsukumaran/vim-buffergator'
-Plugin 'vim-scripts/upAndDown'
-Plugin 'pangloss/vim-javascript'
+Plug 'tpope/vim-fugitive'
+Plug 'ervandew/screen'
+Plug 'vim-syntastic/syntastic'
+Plug 'jeetsukumaran/vim-buffergator'
+Plug 'vim-scripts/upAndDown'
+Plug 'pangloss/vim-javascript'
 
 " snippets
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'honza/vim-snippets'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'honza/vim-snippets'
 
-Plugin 'ervandew/supertab'
-Plugin 'mileszs/ack.vim'
+Plug 'ervandew/supertab'
+Plug 'mileszs/ack.vim'
 
 " markdown
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
 
 " colors
-Plugin 'jpo/vim-railscasts-theme'
+Plug 'jpo/vim-railscasts-theme'
 
 " plugin from http://vim-scripts.org/vim/scripts.html
-" Plugin 'L9'
+" Plug 'L9'
 " Git plugin not hosted on GitHub
-Plugin 'git://git.wincent.com/command-t.git'
+Plug 'git://git.wincent.com/command-t.git'
+
+Plug 'nvim-lua/plenary.nvim'
+Plug 'scalameta/nvim-metals'
 
 " The sparkup vim script is in a subdirectory of this repo called vim.
 " Pass the path to set the runtimepath properly.
-" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Install L9 and avoid a Naming conflict if you've already installed a
 " different version somewhere else.
-" Plugin 'ascenator/L9', {'name': 'newL9'}
+" Plug 'ascenator/L9', {'name': 'newL9'}
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
+" All of your Plugs must be added before the following line
+call plug#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 "
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
+" see :h  for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
 let mapleader=','
@@ -127,6 +120,8 @@ set lcs=tab:>-,trail:-
 "let g:ScreenShellTerminal=''
 let g:ScreenImpl='Tmux'
 
+" command T
+let g:CommandTPreferredImplementation='lua'
 
 " for javascript
 autocmd FileType javascript noremap <buffer>  <C-o> :call JsBeautify()<cr>
